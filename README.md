@@ -30,7 +30,7 @@
 - 📌 **Mac Support** – Coming soon!  
 
 ## 💡 Contributing  
-Pull requests are welcome! Feel free to submit issues and suggestions on [GitHub Issues](https://github.com/yourusername/AuralEdge/issues).  
+Pull requests are welcome! Feel free to submit issues and suggestions on [GitHub Issues](https://github.com/shreyandcode/AuralEdge/issues).  
 
 ## 📜 License  
 This project is licensed under the **MIT License**.

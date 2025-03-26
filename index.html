@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuralEdge🎸</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        :root {
+            --primary-color: #a64dff;
+            --secondary-color: #440066;
+            --text-color: #e0b3ff;
+            --bg-color: #33004d;
+        }
+
+        * {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a0033;
+            color: var(--text-color);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .device-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: calc(100% - 80px);
+            max-width: 1320px;
+            justify-content: center;
+        }
+
+        .controls-container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(166, 77, 255, 0.2);
+            width: calc(100% - 80px);
+            max-width: 1320px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-label {
+            position: absolute;
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            width: 80%;
+            text-align: center;
+            padding: 5px;
+            background: rgba(51, 0, 77, 0.8);
+            border-radius: 12px;
+            backdrop-filter: blur(2px);
+            z-index: 2;
+        }
+
+        input[type="range"] {
+            position: absolute;
+            -webkit-appearance: none;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) var(--progress, 0%), var(--secondary-color) var(--progress, 0%));
+            border: 4px solid var(--text-color);
+            outline: none;
+            transform: rotate(-90deg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        input[type="range"]:hover {
+            transform: rotate(-90deg) scale(1.05);
+            box-shadow: 0 0 20px rgba(166, 77, 255, 0.4);
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #ff33cc;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+            box-shadow: 0 0 15px rgba(255, 51, 204, 0.4);
+        }
+
+        select {
+            background: var(--secondary-color);
+            color: var(--text-color);
+            border: 2px solid var(--primary-color);
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            min-width: 120px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            background: var(--primary-color);
+            border-color: var(--text-color);
+        }
+
+        select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(166, 77, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .controls-container {
+                width: calc(100% - 40px);
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .device-container {
+                width: calc(100% - 40px);
+            }
+
+            .slider-container {
+                width: 120px;
+                height: 120px;
+            }
+
+            input[type="range"] {
+                width: 120px;
+                height: 120px;
+            }
+
+            .slider-label {
+                font-size: 11px;
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .controls-container {
+                width: calc(100% - 20px);
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .device-container {
+                width: calc(100% - 20px);
+            }
+
+            .slider-container {
+                width: 90px;
+                height: 90px;
+            }
+
+            input[type="range"] {
+                width: 90px;
+                height: 90px;
+            }
+
+            .slider-label {
+                font-size: 10px;
+                width: 65%;
+                padding: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>AuralEdge🎸</h1>
+    
+    <div class="controls-container">
+        <div class="slider-container">
+            <input type="range" id="distortion" min="0" max="1000" value="400">
+            <div class="slider-label">Distortion</div>
+        </div>
+        
+        <div class="slider-container">
+            <input type="range" id="delay" min="0" max="1000" value="100">
+            <div class="slider-label">Delay</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="volume" min="0" max="100" value="50">
+            <div class="slider-label">Volume</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="gain" min="0" max="100" value="50">
+            <div class="slider-label">Gain</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="bass" min="0" max="100" value="50">
+            <div class="slider-label">Bass</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="mid" min="0" max="100" value="50">
+            <div class="slider-label">Middle</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="treble" min="0" max="100" value="50">
+            <div class="slider-label">Treble</div>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" id="reverb" min="0" max="100" value="50">
+            <div class="slider-label">Reverb</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('input[type="range"]').forEach(slider => {
+            slider.style.setProperty('--progress', slider.value + "%");
+            slider.addEventListener('input', function() {
+                this.style.setProperty('--progress', this.value + "%");
+            });
+        });
+    </script>
+    <script src="renderer.js"></script>
+</body>
+</html>

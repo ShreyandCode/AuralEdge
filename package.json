@@ -1,0 +1,18 @@
+{
+  "name": "auraledge",
+  "productName": "AuralEdge",
+  "version": "1.0.0",
+  "description": "A DAW that converts acoustic guitar sounds to electric tones with distortion, echo, EQ, and reverb controls",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "com.shreyandcode.auraledge",
+    "productName": "AuralEdge",
+    "icon": "icon.png"
+  },
+  "dependencies": {
+    "electron": "^25.1.8"
+  }
+}

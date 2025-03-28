@@ -4,15 +4,62 @@
   "version": "1.0.0",
   "description": "A DAW that converts acoustic guitar sounds to electric tones with distortion, echo, EQ, and reverb controls",
   "main": "main.js",
+  "author": "Shrey & Code",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "com.shreyandcode.auraledge",
     "productName": "AuralEdge",
-    "icon": "icon.png"
+    "copyright": "© 2025 Shrey & Code",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "shortcutName": "AuralEdge",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "perMachine": true
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/icon.png"
+    },
+    "electronVersion": "35.1.2",
+    "publish": [
+      {
+        "provider": "github",
+        "repo": "auraledge",
+        "owner": "ShreyandCode",
+        "releaseType": "release"
+      }
+    ]
   },
-  "dependencies": {
-    "electron": "^25.1.8"
+  "keywords": [
+    "electron",
+    "music",
+    "guitar",
+    "effects",
+    "audio"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.1.2",
+    "electron-builder": "^24.13.3"
   }
 }

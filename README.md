@@ -12,7 +12,7 @@
 
 ## 🛠️ Installation  
 1. **Download** the latest release from [GitHub Releases](https://github.com/shreyandcode/AuralEdge/releases).  
-2. **Extract** the files and run `AuralEdge.exe` (Windows)
+2. **Extract** the files and run `AuralEdge.exe` (Windows) or `AuralEdge.AppImage` (Linux).  
 3. **Connect** your guitar via a compatible audio interface.  
 4. **Enjoy** real-time effects and a great playing experience!  
 
@@ -30,7 +30,7 @@
 - 📌 **Mac Support** – Coming soon!  
 
 ## 💡 Contributing  
-Pull requests are welcome! Feel free to submit issues and suggestions on [GitHub Issues](https://github.com/shreyandcode/AuralEdge/issues).  
+Pull requests are welcome! Feel free to submit issues and suggestions on [GitHub Issues](https://github.com/yourusername/AuralEdge/issues).  
 
 ## 📜 License  
 This project is licensed under the **MIT License**.
